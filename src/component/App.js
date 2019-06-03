@@ -1,5 +1,6 @@
+import React from 'react';
 import { createStore } from 'redux';
-import reducer from './reducers';
+import reducer from '../reducers';
 import {
   addTodo,
   deleteTodo,
@@ -11,9 +12,15 @@ import {
   SHOW_ALL,
   SHOW_COMPLETED,
   SHOW_ACTIVE
-} from './actions';
+} from '../actions/';
 
 const store = createStore(reducer);
 store.dispatch(addTodo('have dinner'));
 
 console.log(store.getState());
+
+const App = () => {
+  return <div>{console.log(store.getState())}</div>;
+};
+
+export default App;
